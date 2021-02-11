@@ -21,7 +21,6 @@ public class PlayerMotor : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
-            // Debug.Log("Target is " + target.name + " and distance is " + agent.remainingDistance);
         }
     }
 
@@ -33,7 +32,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void FollowTarget(Interactable newTarget)
     {
-        agent.stoppingDistance = newTarget.radius * .8f;        
+        agent.stoppingDistance = newTarget.radius * .8f;    // turning off Auto Braking in the Nav Mesh Agent on the player sort of made this work but now movement is messed up
         target = newTarget.transform;
     }
 

@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100, movementMask)) 
             {
-                Debug.Log("We hit " + hit.collider.name + " at " + hit.point);
+                //Debug.Log("We hit " + hit.collider.name + " at " + hit.point);
                 motor.MoveToPoint(hit.point);
 
                 // Stop focusing any object
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
                 if (interactable != null)
                 {
                     SetFocus(interactable);
+                    Debug.Log("Interacting with " + hit.collider.name);
                 }
             }
         }
